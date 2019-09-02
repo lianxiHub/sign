@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .sign{
+	overflow:hidden;
+	position:fixed;
+	top:0;
+	bottom:0;
+	overflow:auto;
+	left:0;
+	width:100%;
+	height:100%;
+	background: rgba(00,00,00,0.6)
+}
+#box{
+	margin-top:5px !important;
+	width:90%;
+	height:350px;
+	margin:0 auto;
+}
+.space-around{
+	justify-content: space-around;
+}
+.flex-row{
+	display:flex;
+	flex-direction: row;
+}
+.space-around{
+	justify-content: space-around;
+}
+.btn2{
+	display:block;
+	height:50px;
+	margin:10px 0;
+	font-size:24px;
+	width:150px;
+	color:#fff;
+	background: #337ab7;
+}
+.signImg img{
+	width:150px;
+	height:auto;
+}
+    </style>
+</head>
+<body>
+   <div id="body">
+       <sign :signshow="signShow"></sign>
+       <div id="sign"></div>
+   </div> 
+</body>
+</html>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="sign.js"></script>
+<script>
+  var vm = new Vue({
+      el:"#body",
+      data:{
+        signShow:false,
+         signature:"sign"
+      },
+      mounted(){
+          setTimeout(function(){
+            vm.signShow = true;
+          },1000)
+          
+      }
+  })
+</script>
